@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { apiKey } from "./Utils/apiKey"
+import Navbar from "./Components/Navbar"
+import MainDiv from "./Components/MainDiv"
 
 const App = () => {
   const [input, setInput] = useState("")
@@ -27,13 +29,15 @@ const App = () => {
 
   return (
     <div className="w-[100vw] h-[100vh] bg-slate-300">
-      <input
+      {/* <input
         type="text"
         name=""
         id=""
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={checkTweet}>Check</button>
+      <button onClick={checkTweet}>Check</button> */}
+      <Navbar />
+      <MainDiv />
     </div>
   )
 }
