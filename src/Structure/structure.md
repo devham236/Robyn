@@ -5,4 +5,3 @@ In der Startseite ist zunächst ein button zu sehen der den Vorgang startet in d
 Also in welcher Beziehung steht der User zur Person, wie alt ist die Person, männlich oder weiblich, Interessen, aktuelle Lage usw.
 
 ## Designs
-![Figma File](figma-test.png)
