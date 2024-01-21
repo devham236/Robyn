@@ -10,5 +10,3 @@
 ## Designs
 
 ![Draft](ai-gift-recommender-sketch-1.jpg)
-![Draft](ai-gift-recommender-sketch-2.jpg)
-![Draft](ai-gift-recommender-sketch-3.jpg)
