@@ -1,4 +1,4 @@
-## Ideas
+## Features
 
 - Zweck der App ist, Geschenkideen zu bekommen nachdem man einige Informationen über eine Person eingibt.
 - In der Startseite ist zunächst ein button zu sehen der den Vorgang startet in dem der User befragt wird.
@@ -8,9 +8,3 @@
 - OpenAI gibt dir die Vorschläge, also die Geschenke, und du musst dann mit der Amazon API nach den Vorschlägen suchen bzw. Daten über die Geschenke/Produkte bekommen.
 
 ## Designs
-
-![Draft](ai-gift-recommender-sketch-1.jpg)
-
-![Draft](ai-gift-recommender-sketch-2.jpg)
-
-![Draft](ai-gift-recommender-sketch-3.jpg)
