@@ -3,7 +3,9 @@ import React from "react"
 const App = () => {
   const array = new Array(4).fill("test")
 
-  console.table(array)
+  /*
+  - Die Array enthält ein object, jedes object hat eine frage, eine id und viellecith ein type
+  */
 
   return (
     <div className="w-[100dvw] h-[100dvh] bg-slate-800">
