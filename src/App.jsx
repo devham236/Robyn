@@ -4,7 +4,9 @@ const App = () => {
   const array = new Array(4).fill("test")
 
   /*
-  - Die Array enthält ein object, jedes object hat eine frage, eine id und viellecith ein type
+  - Die Array enthält ein object, jedes object hat eine frage, eine id und vielleicht ein type
+  - iterate über die array und render eine Komponente
+  - die komponente enthält die frage und ein input feld
   */
 
   return (
