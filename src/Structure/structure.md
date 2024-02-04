@@ -7,4 +7,9 @@
 - Am Ende bekommt der User Geschenke mit Bildern, infos und ein Amazon Buy Link vorgeschlagen. Bedeutet du musst die API von OpenAI mit einer Amazon API oder ähnlicher kombinieren
 - OpenAI gibt dir die Vorschläge, also die Geschenke, und du musst dann mit der Amazon API nach den Vorschlägen suchen bzw. Daten über die Geschenke/Produkte bekommen.
 
+## Logic/Tech
+
+- Es wird über eine Array gerendert und für jede Frage eine Komponente gerendert
+- Jede Komponente enthält die Frage, ein input feld und weitere infos
+
 ## Designs
