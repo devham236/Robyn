@@ -11,5 +11,8 @@
 
 - Es wird über eine Array gerendert und für jede Frage eine Komponente gerendert
 - Jede Komponente enthält die Frage, ein input feld und weitere infos
+- Ein state in einem global context sammelt alle inputs und macht daraus einen finalen string der an ein endpoint geschickt wird.
+- Ein Server handelt diesen endpoint und macht einen fetch call an die OpenAI API und vielleicht auch an eine Amazon Products Api und sendet die response an das frontend zurück.
+- Darin
 
 ## Designs
