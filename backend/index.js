@@ -4,9 +4,10 @@ require("dotenv").config()
 
 const server = express()
 server.use(cors())
+server.use(express.json())
 
-server.get("/api/v1/gifts", (req, res) => {
-  console.log("works")
+server.post("/api/v1/gifts", (req, res) => {
+  console.log(req.body)
   res.status(200).json({ message: "works" })
 })
 

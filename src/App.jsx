@@ -35,7 +35,10 @@ const App = () => {
 
   const getGifts = async () => {
     try {
-      const data = await axios.get("http://localhost:8000/api/v1/gifts")
+      const data = await axios.post(
+        "http://localhost:8000/api/v1/gifts",
+        answers
+      )
       console.log(data)
     } catch (error) {
       console.log(error)
