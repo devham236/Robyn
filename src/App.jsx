@@ -21,15 +21,23 @@ const App = () => {
     setCurrentEl(currentEl - 1)
   }
 
+  console.log(currentEl)
+
   return (
     <main className="w-[100vw] h-[100vh] flex items-center justify-center">
       <div className="w-[1000px] h-[600px] bg-slate-900 flex items-center justify-center relative">
-        <div className={`w-1/2 h-1/2 bg-[${elements[currentEl].color}]`}></div>
+        <div
+          className={`w-1/2 h-1/2 border-2 border-slate-400 flex items-center justify-center`}
+        >
+          <p className="text-white text-center font-bold text-2xl">
+            {elements[currentEl].question}
+          </p>
+        </div>
         <div onClick={nextElement}>
-          <i className="fa-solid fa-circle-chevron-right text-white absolute top-[50%] right-0"></i>
+          <i className="fa-solid fa-circle-chevron-right text-white absolute top-[50%] right-0 text-xl"></i>
         </div>
         <div onClick={prevElement}>
-          <i className="fa-solid fa-circle-chevron-left text-white absolute top-[50%] left-0"></i>
+          <i className="fa-solid fa-circle-chevron-left text-white absolute top-[50%] left-0 text-xl"></i>
         </div>
       </div>
     </main>

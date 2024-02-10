@@ -1,12 +1,19 @@
 const elements = [
   {
-    color: "yellow",
+    question: "How are you related?",
+    id: 1,
   },
   {
-    color: "red",
+    question: "What is their age?",
+    id: 2,
   },
   {
-    color: "blue",
+    question: "What is their gender?",
+    id: 3,
+  },
+  {
+    question: "What are their interests?",
+    id: 4,
   },
 ]
 
