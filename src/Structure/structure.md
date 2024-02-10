@@ -15,6 +15,6 @@
 - Ein Server handelt diesen endpoint und macht einen fetch call an die OpenAI API und vielleicht auch an eine Amazon Products Api und sendet die response an das frontend zurück.
 - Darin sind informationen zu den Gift recommendations enthalten (bild, preis, titel usw.)
 - Das frontend iteriert über die response und rendert Komponenten mit all den Informationen
-- Ein weiterer state trackt die aktuelle frage die der User vor sicht hat
+- Ein weiterer state trackt die aktuelle frage die der User vor sicht hat.
 
 ## Designs
