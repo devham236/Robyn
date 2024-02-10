@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import elements from "./Utils/testArray"
+import axios from "axios"
 
 const App = () => {
   const [currentEl, setCurrentEl] = useState(0)
@@ -32,6 +33,15 @@ const App = () => {
     setCurrentEl(currentEl - 1)
   }
 
+  const getGifts = async () => {
+    try {
+      const data = await axios.get("http://localhost:8000/api/v1/gifts")
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <main className="w-[100vw] h-[100vh] flex items-center justify-center">
       <div className="w-[1000px] h-[600px] bg-slate-900 flex items-center justify-center flex-col relative">
@@ -48,7 +58,12 @@ const App = () => {
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
-        <button className="px-3 py-2 text-white bg-slate-500">Finish</button>
+        <button
+          onClick={getGifts}
+          className="px-3 py-2 text-white bg-slate-500"
+        >
+          Finish
+        </button>
         <div onClick={nextElement}>
           <i className="fa-solid fa-circle-chevron-right text-white absolute top-[50%] right-0 text-xl"></i>
         </div>

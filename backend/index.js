@@ -5,6 +5,11 @@ require("dotenv").config()
 const server = express()
 server.use(cors())
 
-server.listen(process.env.PORT, () => {
-  console.log(`Server is listening on Port: ${process.env.PORT}`)
+server.get("/api/v1/gifts", (req, res) => {
+  console.log("works")
+  res.status(200).json({ message: "works" })
+})
+
+server.listen(8000, () => {
+  console.log(`Server is listening on Port: 8000`)
 })
