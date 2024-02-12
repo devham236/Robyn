@@ -29,7 +29,7 @@ server.post("/api/v1/gifts", async (req, res) => {
       options
     )
     const data = await response.json()
-    res.status(200).json({ data })
+    res.status(200).json({ ai_response: data.choices[0].message.content })
   } catch (error) {
     res.status(400).json({ message: "Something went wrong" })
   }
