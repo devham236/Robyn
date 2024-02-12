@@ -21,9 +21,18 @@ const options = {
   }),
 }
 
-server.post("/api/v1/gifts", (req, res) => {
-  console.log(req.body)
-  res.status(200).json({ message: "works" })
+server.post("/api/v1/gifts", async (req, res) => {
+  try {
+    console.log(req.body)
+    const response = await fetch(
+      "https://api.openai.com/v1/chat/completions",
+      options
+    )
+    const data = await response.json()
+    res.status(200).json({ data })
+  } catch (error) {
+    res.status(400).json({ message: "Something went wrong" })
+  }
 })
 
 server.listen(8000, () => {
