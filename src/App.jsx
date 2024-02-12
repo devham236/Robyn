@@ -43,14 +43,12 @@ const App = () => {
         answers
       )
       console.log(data)
-      setResult(data)
+      setResult(data.ai_response)
       setLoading(false)
     } catch (error) {
       console.log(error)
     }
   }
-
-  console.log(result)
 
   return (
     <main className="w-[100vw] h-[100vh] flex items-center justify-center">
@@ -75,7 +73,7 @@ const App = () => {
           Finish
         </button>
         {loading && <p className=" text-center mt-4 text-white">Loading...</p>}
-        <p className=" text-center mt-4 text-white"></p>
+        <p className="text-sm text-center mt-4 text-white">{result}</p>
         <div onClick={nextElement}>
           <i className="fa-solid fa-circle-chevron-right text-white absolute top-[50%] right-0 text-xl"></i>
         </div>
