@@ -7,7 +7,7 @@ const App = () => {
   const [currentEl, setCurrentEl] = useState(0)
   const [answers, setAnswers] = useState([])
   const [input, setInput] = useState("")
-  const [result, setResult] = useState("")
+  const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
 
   const nextElement = () => {
@@ -38,16 +38,19 @@ const App = () => {
   const getGifts = async () => {
     setLoading(true)
     try {
-      const data = await axios.post(
+      const { data } = await axios.post(
         "http://localhost:8000/api/v1/gifts",
         answers
       )
       console.log(data)
+      setResult(data)
       setLoading(false)
     } catch (error) {
       console.log(error)
     }
   }
+
+  console.log(result)
 
   return (
     <main className="w-[100vw] h-[100vh] flex items-center justify-center">
@@ -71,7 +74,8 @@ const App = () => {
         >
           Finish
         </button>
-        <p className=" text-center mt-4 text-white">{loading && "Loading.."}</p>
+        {loading && <p className=" text-center mt-4 text-white">Loading...</p>}
+        <p className=" text-center mt-4 text-white"></p>
         <div onClick={nextElement}>
           <i className="fa-solid fa-circle-chevron-right text-white absolute top-[50%] right-0 text-xl"></i>
         </div>
