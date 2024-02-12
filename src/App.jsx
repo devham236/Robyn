@@ -36,12 +36,14 @@ const App = () => {
   }
 
   const getGifts = async () => {
+    setLoading(true)
     try {
       const data = await axios.post(
         "http://localhost:8000/api/v1/gifts",
         answers
       )
       console.log(data)
+      setLoading(false)
     } catch (error) {
       console.log(error)
     }
@@ -69,12 +71,7 @@ const App = () => {
         >
           Finish
         </button>
-        <p className=" text-center mt-4 text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aliquid
-          dolorem eius laborum dignissimos iusto architecto non minima ratione
-          ab sed fugit, dolores consectetur at? Magnam architecto quos nobis
-          est.
-        </p>
+        <p className=" text-center mt-4 text-white">{loading && "Loading.."}</p>
         <div onClick={nextElement}>
           <i className="fa-solid fa-circle-chevron-right text-white absolute top-[50%] right-0 text-xl"></i>
         </div>
