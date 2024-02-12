@@ -7,6 +7,7 @@ const App = () => {
   const [currentEl, setCurrentEl] = useState(0)
   const [answers, setAnswers] = useState([])
   const [input, setInput] = useState("")
+  const [result, setResult] = useState("")
 
   const nextElement = () => {
     if (currentEl === elements.length - 1) {
