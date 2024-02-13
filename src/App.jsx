@@ -10,6 +10,8 @@ const App = () => {
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
 
+  console.log(elements.map((el) => `${el.type}`).toString())
+
   const nextElement = () => {
     if (currentEl === elements.length - 1) {
       setCurrentEl(0)
@@ -21,7 +23,7 @@ const App = () => {
     }
     setAnswers((prev) => [
       ...prev,
-      { question: elements[currentEl].question, answer: input },
+      { type: elements[currentEl].type, answer: input },
     ])
     setCurrentEl(currentEl + 1)
     setInput("")

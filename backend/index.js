@@ -6,22 +6,21 @@ const server = express()
 server.use(cors())
 server.use(express.json())
 
-const options = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${process.env.API_KEY}`,
-  },
-  body: JSON.stringify({
-    model: "gpt-3.5-turbo",
-    messages: [
-      { role: "user", content: "Explain AI to me like i am 5 years old" },
-    ],
-    max_tokens: 100,
-  }),
-}
-
 server.post("/api/v1/gifts", async (req, res) => {
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "user", content: "Explain AI to me like i am 5 years old" },
+      ],
+      max_tokens: 100,
+    }),
+  }
   try {
     console.log(req.body)
     const response = await fetch(
