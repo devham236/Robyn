@@ -20,11 +20,11 @@ server.post("/api/v1/gifts", async (req, res) => {
         messages: [
           {
             role: "user",
-            content: `Generate some Gift Recommendations for the following Person: 
+            content: `Generate 3 Gift Recommendations, don't add any explanations, just give me a list of Gifts for the following Person: 
           ${req.body.map((el) => `${el.type} ${el.answer}`).toString()}`,
           },
         ],
-        max_tokens: 150,
+        max_tokens: 100,
       }),
     }
     const response = await fetch(
