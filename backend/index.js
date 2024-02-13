@@ -7,27 +7,32 @@ server.use(cors())
 server.use(express.json())
 
 server.post("/api/v1/gifts", async (req, res) => {
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-3.5-turbo",
-      messages: [
-        { role: "user", content: "Explain AI to me like i am 5 years old" },
-      ],
-      max_tokens: 100,
-    }),
-  }
   try {
     console.log(req.body)
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "user",
+            content: `Generate some Gift Recommendations for the following Person: 
+          ${req.body.map((el) => `${el.type} ${el.answer}`).toString()}`,
+          },
+        ],
+        max_tokens: 150,
+      }),
+    }
     const response = await fetch(
       "https://api.openai.com/v1/chat/completions",
       options
     )
     const data = await response.json()
+    console.log(data)
     res.status(200).json({ ai_response: data.choices[0].message.content })
   } catch (error) {
     res.status(400).json({ message: "Something went wrong" })

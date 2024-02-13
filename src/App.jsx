@@ -10,8 +10,6 @@ const App = () => {
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
 
-  console.log(elements.map((el) => `${el.type}`).toString())
-
   const nextElement = () => {
     if (currentEl === elements.length - 1) {
       setCurrentEl(0)
