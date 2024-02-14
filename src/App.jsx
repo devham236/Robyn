@@ -19,12 +19,14 @@ const App = () => {
       ])
       return
     }
-    setAnswers((prev) => [
-      ...prev,
-      { type: elements[currentEl].type, answer: input },
-    ])
-    setCurrentEl(currentEl + 1)
-    setInput("")
+    if (input) {
+      setAnswers((prev) => [
+        ...prev,
+        { type: elements[currentEl].type, answer: input },
+      ])
+      setCurrentEl(currentEl + 1)
+      setInput("")
+    }
   }
 
   const prevElement = () => {
