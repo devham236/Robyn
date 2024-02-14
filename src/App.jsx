@@ -9,6 +9,7 @@ const App = () => {
   const [input, setInput] = useState("")
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [finishedQuestions, setFinishedQuestions] = useState(false)
 
   const nextElement = () => {
     if (currentEl === elements.length - 1) {
@@ -47,6 +48,7 @@ const App = () => {
       console.log(data)
       setResult(data.ai_response)
       setLoading(false)
+      setFinishedQuestions(true)
     } catch (error) {
       console.log(error)
     }
@@ -55,6 +57,11 @@ const App = () => {
   return (
     <main className="w-[100vw] h-[100vh] flex items-center justify-center">
       <div className="w-[1000px] h-[600px] bg-slate-900 flex items-center justify-center flex-col relative">
+        {finishedQuestions && (
+          <p className="text-sm text-center mb-4 text-white">
+            Finished Questions: True
+          </p>
+        )}
         <div
           className={`w-1/2 h-1/2 border-2 border-slate-400 flex items-center justify-center flex-col mb-4`}
         >
@@ -76,6 +83,7 @@ const App = () => {
         </button>
         {loading && <p className=" text-center mt-4 text-white">Loading...</p>}
         <p className="text-sm text-center mt-4 text-white">{result}</p>
+
         <div onClick={nextElement}>
           <i className="fa-solid fa-circle-chevron-right text-white absolute top-[50%] right-0 text-xl"></i>
         </div>
