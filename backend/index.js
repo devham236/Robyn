@@ -7,6 +7,7 @@ server.use(cors())
 server.use(express.json())
 
 //Rainforest API
+//API funktioniert, du kannst nach bestimmten produkte suchen. Du musst also die Vorschläge von der OpenAI API extrahieren und dann nur nach den Porduktnamen mit der Rainforest API suchen, diese gibt dir dann einen Link, Bilder, Preise und weitere Informationen, diese schickst du dann ans FE zurück.
 
 server.post("/api/v1/gifts", async (req, res) => {
   try {
