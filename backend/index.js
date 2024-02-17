@@ -6,6 +6,8 @@ const server = express()
 server.use(cors())
 server.use(express.json())
 
+//Rainforest API
+
 server.post("/api/v1/gifts", async (req, res) => {
   try {
     console.log(req.body)
